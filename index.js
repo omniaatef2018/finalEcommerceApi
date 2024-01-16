@@ -1,7 +1,9 @@
 const path = require('path');
 const express = require('express');
+const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 
+mongoose.set('strictQuery', false); 
 dotenv.config({ path: 'config.env' });
 const morgan = require('morgan');
 require('colors');
