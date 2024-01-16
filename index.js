@@ -1,9 +1,10 @@
 const path = require('path');
 const express = require('express');
-const mongoose = require('mongoose');
 const dotenv = require('dotenv');
+const mongoose = require('mongoose');
 
-mongoose.set('strictQuery', false); 
+// Add this line to set the strictQuery option
+mongoose.set('strictQuery', false); //
 dotenv.config({ path: 'config.env' });
 const morgan = require('morgan');
 require('colors');
@@ -17,12 +18,13 @@ const mountRoutes = require('./routes');
 const { webhookCheckout } = require('./controllers/orderService');
 
 // const dbConnection = require('./config/database');
-mongoose.connect('mongodb+srv://lian:lian@cluster1.tqahmie.mongodb.net/test?retryWrites=true&w=majority', {
+mongoose.connect('mongodb+srv://omnia:omnia@cluster1.tqahmie.mongodb.net/test?retryWrites=true&w=majority', {
   useNewUrlParser: true,
   useUnifiedTopology: true
 })
   .then(() => console.log('Connected to MongoDB'))
   .catch(err => console.error('Error connecting to MongoDB', err));
+
 // const categoryRouter = require('./routes/categoryRoute');
 // const subCategoryRouter = require('./routes/subCategoryRoute');
 // const brandRouter = require('./routes/brandRoute');
