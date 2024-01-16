@@ -17,7 +17,7 @@ const mountRoutes = require('./routes');
 const { webhookCheckout } = require('./controllers/orderService');
 
 // const dbConnection = require('./config/database');
-mongoose.connect('mongodb+srv://omnia:omnia@cluster1.tqahmie.mongodb.net/test?retryWrites=true&w=majority', {
+mongoose.connect('mongodb+srv://render:render@cluster1.tqahmie.mongodb.net/test?retryWrites=true&w=majority', {
   useNewUrlParser: true,
   useUnifiedTopology: true
 })
