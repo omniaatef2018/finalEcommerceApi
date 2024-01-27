@@ -16,6 +16,8 @@ const {
   deleteBrandValidator,
 } = require('../utils/validators/brandValidator');
 
+const uploadToCloudinary = require('../utils/uploadToCloudinary');
+
 const authController = require('../controllers/authController');
 
 const router = express.Router();
@@ -27,7 +29,8 @@ router
     authController.auth,
     authController.allowedTo('admin', 'manager'),
     uploadBrandImage,
-    resizeImage,
+    uploadToCloudinary,
+    // resizeImage,
     createBrandValidator,
     createBrand
   )
@@ -41,7 +44,8 @@ router
     authController.auth,
     authController.allowedTo('admin', 'manager'),
     uploadBrandImage,
-    resizeImage,
+    uploadToCloudinary,
+    // resizeImage,
     updateBrandValidator,
     updateBrand
   )

@@ -15,6 +15,9 @@ const {
   updateCategoryValidator,
   deleteCategoryValidator,
 } = require('../utils/validators/categoryValidator');
+
+const uploadToCloudinary = require('../utils/uploadToCloudinary');
+
 const authController = require('../controllers/authController');
 
 const subCategoryRoute = require('./subCategoryRoute');
@@ -29,7 +32,8 @@ router
     authController.auth,
     authController.allowedTo('admin', 'manager'),
     uploadCategoryImage,
-    resizeImage,
+    uploadToCloudinary,
+    // resizeImage,
     createCategoryValidator,
     createCategory
   )
@@ -42,7 +46,8 @@ router
     authController.auth,
     authController.allowedTo('admin', 'manager'),
     uploadCategoryImage,
-    resizeImage,
+    uploadToCloudinary,
+    // resizeImage,
     updateCategoryValidator,
     updateCategory
   )

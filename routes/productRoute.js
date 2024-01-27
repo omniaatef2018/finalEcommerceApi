@@ -15,6 +15,8 @@ const {
   deleteProductValidator,
 } = require('../utils/validators/productValidator');
 
+const uploadToCloudinary = require('../utils/uploadToCloudinary');
+
 const authController = require('../controllers/authController');
 const reviewRoute = require('./reviewRoute');
 
@@ -32,7 +34,8 @@ router
     authController.auth,
     authController.allowedTo('admin', 'manager'),
     uploadProductImages,
-    resizeProductImages,
+    uploadToCloudinary,
+    // resizeProductImages,
     createProductValidator,
     createProduct
   );
@@ -45,7 +48,8 @@ router
     authController.auth,
     authController.allowedTo('admin', 'manager'),
     uploadProductImages,
-    resizeProductImages,
+    uploadToCloudinary,
+    // resizeProductImages,
     updateProductValidator,
     updateProduct
   )
