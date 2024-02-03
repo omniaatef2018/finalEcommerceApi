@@ -134,9 +134,7 @@ exports.checkoutSession = asyncHandler(async (req, res, next) => {
     line_items: [
       {
         // name: req.user.name,
-        price:  cart.totalAfterDiscount
-        ? cart.totalAfterDiscount
-        : cart.totalCartPrice * 100,
+        price:  req.params.cartId,
         // currency: 'egp',
         quantity: 1,
       },
