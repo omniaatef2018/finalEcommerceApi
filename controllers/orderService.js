@@ -137,7 +137,7 @@ exports.checkoutSession = asyncHandler(async (req, res, next) => {
           currency: 'egp',
           product_data: { // Same as with price_data, we're creating a Product inline here, alternatively pass the ID of an existing Product using line_items.price_data.product
             name: 'Shoes',
-            price: 'price_1OflIKJQnMjTJoWVewyjKNIL',
+            price: cartPrice * 100,
           },
           unit_amount: 1000 // 10 US$
         },
