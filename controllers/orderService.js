@@ -133,19 +133,10 @@ exports.checkoutSession = asyncHandler(async (req, res, next) => {
   const session = await stripe.checkout.sessions.create({
     line_items: [
       {
-        price_data: {
-          currency: 'egp',
-          product_data: { // Same as with price_data, we're creating a Product inline here, alternatively pass the ID of an existing Product using line_items.price_data.product
-            name: 'Shoes',
-            price: cartPrice * 100,
-          },
-          unit_amount: 1000 // 10 US$
-        },
+        name: req.user.name,
+        amount: cartPrice * 100,
+        currency: 'egp',
         quantity: 1,
-        // // name: req.user.name,
-        // price: 'price_1OflIKJQnMjTJoWVewyjKNIL',
-        // // currency: 'egp',
-        // quantity: 1,
       },
     ],
     mode: 'payment',
